@@ -33,7 +33,7 @@ export const UserManagementDeleteDialog = (props: IUserManagementDeleteDialogPro
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
       <ModalBody>
-        <Translate contentKey="userManagement.delete.question" interpolate={{ login: user.login }}>
+        <Translate contentKey="User.delete.question" interpolate={{ login: user.login }}>
           Are you sure you want to delete this User?
         </Translate>
       </ModalBody>

@@ -14,7 +14,7 @@ export class HeaderUtil {
     static addEntityCreatedHeaders(res: Response, entityName, param): any {
         res.status(201);
         const message = enableTranslation
-            ? applicationName + '.' + entityName + '.created'
+            ? entityName + '.created'
             : 'A new ' + entityName + ' is created with identifier ' + param;
         this.createAlert(res, message, param);
     }
@@ -22,7 +22,7 @@ export class HeaderUtil {
     static addEntityUpdatedHeaders(res: Response, entityName, param): any {
         res.status(200);
         const message = enableTranslation
-            ? applicationName + '.' + entityName + '.updated'
+            ? entityName + '.updated'
             : 'A ' + entityName + ' is updated with identifier ' + param;
         this.createAlert(res, message, param);
     }
@@ -30,7 +30,7 @@ export class HeaderUtil {
     static addEntityDeletedHeaders(res: Response, entityName, param): any {
         res.status(204);
         const message = enableTranslation
-            ? applicationName + '.' + entityName + '.deleted'
+            ? entityName + '.deleted'
             : 'A ' + entityName + ' is deleted with identifier ' + param;
         this.createAlert(res, message, param);
     }

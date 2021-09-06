@@ -72,50 +72,45 @@ export const UserManagement = (props: IUserManagementProps) => {
   return (
     <div>
       <h2 id="user-management-page-heading" data-cy="userManagementPageHeading">
-        <Translate contentKey="userManagement.home.title">Users</Translate>
+        <Translate contentKey="User.home.title">Users</Translate>
         <div className="d-flex justify-content-end">
           <Button className="mr-2" color="info" onClick={handleSyncList} disabled={loading}>
-            <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="userManagement.home.refreshListLabel">Refresh List</Translate>
+            <FontAwesomeIcon icon="sync" spin={loading} /> <Translate contentKey="User.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to={`${match.url}/new`} className="btn btn-primary jh-create-entity">
-            <FontAwesomeIcon icon="plus" /> <Translate contentKey="userManagement.home.createLabel">Create a new user</Translate>
+            <FontAwesomeIcon icon="plus" /> <Translate contentKey="User.home.createLabel">Create a new user</Translate>
           </Link>
         </div>
       </h2>
       <Table responsive striped>
         <thead>
           <tr>
-            <th className="hand" onClick={sort('id')}>
-              <Translate contentKey="global.field.id">ID</Translate>
-              <FontAwesomeIcon icon="sort" />
-            </th>
             <th className="hand" onClick={sort('login')}>
-              <Translate contentKey="userManagement.login">Login</Translate>
+              <Translate contentKey="User.login">Login</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th className="hand" onClick={sort('email')}>
-              <Translate contentKey="userManagement.email">Email</Translate>
+              <Translate contentKey="User.email">Email</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th />
             <th className="hand" onClick={sort('langKey')}>
-              <Translate contentKey="userManagement.langKey">Lang Key</Translate>
+              <Translate contentKey="User.langKey">Lang Key</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th>
-              <Translate contentKey="userManagement.profiles">Profiles</Translate>
+              <Translate contentKey="User.profiles">Profiles</Translate>
             </th>
             <th className="hand" onClick={sort('createdDate')}>
-              <Translate contentKey="userManagement.createdDate">Created Date</Translate>
+              <Translate contentKey="User.createdDate">Created Date</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th className="hand" onClick={sort('lastModifiedBy')}>
-              <Translate contentKey="userManagement.lastModifiedBy">Last Modified By</Translate>
+              <Translate contentKey="User.lastModifiedBy">Last Modified By</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th id="modified-date-sort" className="hand" onClick={sort('lastModifiedDate')}>
-              <Translate contentKey="userManagement.lastModifiedDate">Last Modified Date</Translate>
+              <Translate contentKey="User.lastModifiedDate">Last Modified Date</Translate>
               <FontAwesomeIcon icon="sort" />
             </th>
             <th />
@@ -124,21 +119,16 @@ export const UserManagement = (props: IUserManagementProps) => {
         <tbody>
           {users.map((user, i) => (
             <tr id={user.login} key={`user-${i}`}>
-              <td>
-                <Button tag={Link} to={`${match.url}/${user.login}`} color="link" size="sm">
-                  {user.id}
-                </Button>
-              </td>
               <td>{user.login}</td>
               <td>{user.email}</td>
               <td>
                 {user.activated ? (
                   <Button color="success" onClick={toggleActive(user)}>
-                    <Translate contentKey="userManagement.activated">Activated</Translate>
+                    <Translate contentKey="User.activated">Activated</Translate>
                   </Button>
                 ) : (
                   <Button color="danger" onClick={toggleActive(user)}>
-                    <Translate contentKey="userManagement.deactivated">Deactivated</Translate>
+                    <Translate contentKey="User.deactivated">Deactivated</Translate>
                   </Button>
                 )}
               </td>

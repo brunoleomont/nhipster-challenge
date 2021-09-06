@@ -22,55 +22,55 @@ export const UserManagementDetail = (props: IUserManagementDetailProps) => {
   return (
     <div>
       <h2>
-        <Translate contentKey="userManagement.detail.title">User</Translate> [<strong>{user.login}</strong>]
+        <Translate contentKey="User.detail.title">User</Translate> [<strong>{user.login}</strong>]
       </h2>
       <Row size="md">
         <dl className="jh-entity-details">
           <dt>
-            <Translate contentKey="userManagement.login">Login</Translate>
+            <Translate contentKey="User.login">Login</Translate>
           </dt>
           <dd>
             <span>{user.login}</span>&nbsp;
             {user.activated ? (
               <Badge color="success">
-                <Translate contentKey="userManagement.activated">Activated</Translate>
+                <Translate contentKey="User.activated">Activated</Translate>
               </Badge>
             ) : (
               <Badge color="danger">
-                <Translate contentKey="userManagement.deactivated">Deactivated</Translate>
+                <Translate contentKey="User.deactivated">Deactivated</Translate>
               </Badge>
             )}
           </dd>
           <dt>
-            <Translate contentKey="userManagement.firstName">First Name</Translate>
+            <Translate contentKey="User.firstName">First Name</Translate>
           </dt>
           <dd>{user.firstName}</dd>
           <dt>
-            <Translate contentKey="userManagement.lastName">Last Name</Translate>
+            <Translate contentKey="User.lastName">Last Name</Translate>
           </dt>
           <dd>{user.lastName}</dd>
           <dt>
-            <Translate contentKey="userManagement.email">Email</Translate>
+            <Translate contentKey="User.email">Email</Translate>
           </dt>
           <dd>{user.email}</dd>
           <dt>
-            <Translate contentKey="userManagement.langKey">Lang Key</Translate>
+            <Translate contentKey="User.langKey">Lang Key</Translate>
           </dt>
           <dd>{user.langKey ? languages[user.langKey].name : undefined}</dd>
           <dt>
-            <Translate contentKey="userManagement.createdBy">Created By</Translate>
+            <Translate contentKey="User.createdBy">Created By</Translate>
           </dt>
           <dd>{user.createdBy}</dd>
           <dt>
-            <Translate contentKey="userManagement.createdDate">Created Date</Translate>
+            <Translate contentKey="User.createdDate">Created Date</Translate>
           </dt>
           <dd>{user.createdDate ? <TextFormat value={user.createdDate} type="date" format={APP_DATE_FORMAT} blankOnInvalid /> : null}</dd>
           <dt>
-            <Translate contentKey="userManagement.lastModifiedBy">Last Modified By</Translate>
+            <Translate contentKey="User.lastModifiedBy">Last Modified By</Translate>
           </dt>
           <dd>{user.lastModifiedBy}</dd>
           <dt>
-            <Translate contentKey="userManagement.lastModifiedDate">Last Modified Date</Translate>
+            <Translate contentKey="User.lastModifiedDate">Last Modified Date</Translate>
           </dt>
           <dd>
             {user.lastModifiedDate ? (
@@ -78,7 +78,7 @@ export const UserManagementDetail = (props: IUserManagementDetailProps) => {
             ) : null}
           </dd>
           <dt>
-            <Translate contentKey="userManagement.profiles">Profiles</Translate>
+            <Translate contentKey="User.profiles">Profiles</Translate>
           </dt>
           <dd>
             <ul className="list-unstyled">

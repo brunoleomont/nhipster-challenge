@@ -48,7 +48,7 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
       <Row className="justify-content-center">
         <Col md="8">
           <h1>
-            <Translate contentKey="userManagement.home.createOrEditLabel">Create or edit a User</Translate>
+            <Translate contentKey="User.home.createOrEditLabel">Create or edit a User</Translate>
           </h1>
         </Col>
       </Row>
@@ -58,17 +58,9 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
             <p>Loading...</p>
           ) : (
             <AvForm onValidSubmit={saveUser}>
-              {user.id ? (
-                <AvGroup>
-                  <Label for="id">
-                    <Translate contentKey="global.field.id">ID</Translate>
-                  </Label>
-                  <AvField type="text" className="form-control" name="id" required readOnly value={user.id} />
-                </AvGroup>
-              ) : null}
               <AvGroup>
                 <Label for="login">
-                  <Translate contentKey="userManagement.login">Login</Translate>
+                  <Translate contentKey="User.login">Login</Translate>
                 </Label>
                 <AvField
                   type="text"
@@ -97,7 +89,7 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
               </AvGroup>
               <AvGroup>
                 <Label for="firstName">
-                  <Translate contentKey="userManagement.firstName">First Name</Translate>
+                  <Translate contentKey="User.firstName">First Name</Translate>
                 </Label>
                 <AvField
                   type="text"
@@ -114,7 +106,7 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
               </AvGroup>
               <AvGroup>
                 <Label for="lastName">
-                  <Translate contentKey="userManagement.lastName">Last Name</Translate>
+                  <Translate contentKey="User.lastName">Last Name</Translate>
                 </Label>
                 <AvField
                   type="text"
@@ -159,12 +151,12 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
               <AvGroup check>
                 <Label>
                   <AvInput type="checkbox" name="activated" value={user.activated} checked={user.activated} disabled={!user.id} />{' '}
-                  <Translate contentKey="userManagement.activated">Activated</Translate>
+                  <Translate contentKey="User.activated">Activated</Translate>
                 </Label>
               </AvGroup>
               <AvGroup>
                 <Label for="langKey">
-                  <Translate contentKey="userManagement.langKey">Language Key</Translate>
+                  <Translate contentKey="User.langKey">Language Key</Translate>
                 </Label>
                 <AvField type="select" className="form-control" name="langKey" value={user.langKey || locales[0]}>
                   {locales.map(locale => (
@@ -176,7 +168,7 @@ export const UserManagementUpdate = (props: IUserManagementUpdateProps) => {
               </AvGroup>
               <AvGroup>
                 <Label for="authorities">
-                  <Translate contentKey="userManagement.profiles">Profiles</Translate>
+                  <Translate contentKey="User.profiles">Profiles</Translate>
                 </Label>
                 <AvInput type="select" className="form-control" name="authorities" value={user.authorities} multiple>
                   {roles.map(role => (

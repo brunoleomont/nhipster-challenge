@@ -1,5 +1,5 @@
 {
-  "userManagement": {
+  "User": {
     "home": {
       "title": "Users",
       "refreshListLabel": "Refresh list",

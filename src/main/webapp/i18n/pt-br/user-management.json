@@ -1,5 +1,5 @@
 {
-  "userManagement": {
+  "User": {
     "home": {
       "title": "Usuários",
       "refreshListLabel": "Atualizar lista",

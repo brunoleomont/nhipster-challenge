@@ -1,0 +1,23 @@
+{
+  "ProfessionalType": {
+    "home": {
+      "title": "Professional Types",
+      "refreshListLabel": "Atualizar lista",
+      "createLabel": "Criar novo Professional Type",
+      "createOrEditLabel": "Criar ou editar Professional Type",
+      "notFound": "Nenhum Professional Type encontrado"
+    },
+    "created": "Um novo Professional Type foi criado com o identificador {{ param }}",
+    "updated": "Um Professional Type foi atualizado com o identificador {{ param }}",
+    "deleted": "Um Professional Type foi excluído com o identificador {{ param }}",
+    "delete": {
+      "question": "Tem certeza de que deseja excluir Professional Type {{ id }}?"
+    },
+    "detail": {
+      "title": "Professional Type"
+    },
+    "id": "ID",
+    "description": "Description",
+    "activated": "Activated"
+  }
+}

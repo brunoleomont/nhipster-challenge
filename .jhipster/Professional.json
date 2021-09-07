@@ -19,7 +19,15 @@
       "fieldValidateRules": ["required"]
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "professionalType",
+      "otherEntityName": "professionalType",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
+      "otherEntityField": "description"
+    }
+  ],
   "service": "serviceClass",
   "dto": "no",
   "jpaMetamodelFiltering": false,

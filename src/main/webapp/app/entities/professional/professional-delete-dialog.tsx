@@ -35,8 +35,8 @@ export const ProfessionalDeleteDialog = (props: IProfessionalDeleteDialogProps) 
       <ModalHeader toggle={handleClose} data-cy="professionalDeleteDialogHeading">
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="crudApp.professional.delete.question">
-        <Translate contentKey="crudApp.professional.delete.question" interpolate={{ id: professionalEntity.id }}>
+      <ModalBody id="Professional.delete.question">
+        <Translate contentKey="Professional.delete.question" interpolate={{ id: professionalEntity.id }}>
           Are you sure you want to delete this Professional?
         </Translate>
       </ModalBody>

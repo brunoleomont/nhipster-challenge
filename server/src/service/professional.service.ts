@@ -6,6 +6,7 @@ import { ProfessionalMapper } from '../service/mapper/professional.mapper';
 import { ProfessionalRepository } from '../repository/professional.repository';
 
 const relationshipNames = [];
+relationshipNames.push('professionalType');
 
 @Injectable()
 export class ProfessionalService {

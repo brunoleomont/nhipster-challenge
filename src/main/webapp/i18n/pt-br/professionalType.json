@@ -1,23 +1,23 @@
 {
   "ProfessionalType": {
     "home": {
-      "title": "Professional Types",
+      "title": "Tipo de Profissional",
       "refreshListLabel": "Atualizar lista",
-      "createLabel": "Criar novo Professional Type",
-      "createOrEditLabel": "Criar ou editar Professional Type",
-      "notFound": "Nenhum Professional Type encontrado"
+      "createLabel": "Novo",
+      "createOrEditLabel": "Criar ou editar Tipo de Profissional",
+      "notFound": "Nenhum Tipo de Profissional encontrado"
     },
-    "created": "Um novo Professional Type foi criado com o identificador {{ param }}",
-    "updated": "Um Professional Type foi atualizado com o identificador {{ param }}",
-    "deleted": "Um Professional Type foi excluído com o identificador {{ param }}",
+    "created": "Um novo Tipo de Profissional foi criado com o identificador {{ param }}",
+    "updated": "Um Tipo de Profissional foi atualizado com o identificador {{ param }}",
+    "deleted": "Um Tipo de Profissional foi excluído com o identificador {{ param }}",
     "delete": {
-      "question": "Tem certeza de que deseja excluir Professional Type {{ id }}?"
+      "question": "Tem certeza de que deseja excluir Tipo de Profissional {{ id }}?"
     },
     "detail": {
-      "title": "Professional Type"
+      "title": "Tipo de Profissional"
     },
     "id": "ID",
-    "description": "Description",
-    "activated": "Activated"
+    "description": "Descrição",
+    "activated": "Ativado"
   }
 }

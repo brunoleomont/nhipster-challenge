@@ -1,27 +1,26 @@
 {
-  "crudApp": {
-    "professional": {
-      "home": {
-        "title": "Profissionais",
-        "refreshListLabel": "Atualizar lista",
-        "createLabel": "Novo",
-        "createOrEditLabel": "Criar ou editar Profissional",
-        "notFound": "Nenhum Profissional encontrado"
-      },
-      "created": "Um novo Profissional foi criado com o identificador {{ param }}",
-      "updated": "Um Profissional foi atualizado com o identificador {{ param }}",
-      "deleted": "Um Profissional foi excluído com o identificador {{ param }}",
-      "delete": {
-        "question": "Tem certeza de que deseja excluir Profissional {{ id }}?"
-      },
-      "detail": {
-        "title": "Profissional"
-      },
-      "id": "ID",
-      "name": "Nome",
-      "phone": "Telefone",
-      "email": "Email",
-      "activated": "Ativado"
-    }
+  "Professional": {
+    "home": {
+      "title": "Profissionais",
+      "refreshListLabel": "Atualizar lista",
+      "createLabel": "Novo",
+      "createOrEditLabel": "Criar ou editar Profissional",
+      "notFound": "Nenhum Profissional encontrado"
+    },
+    "created": "Um novo Profissional foi criado com o identificador {{ param }}",
+    "updated": "Um Profissional foi atualizado com o identificador {{ param }}",
+    "deleted": "Um Profissional foi excluído com o identificador {{ param }}",
+    "delete": {
+      "question": "Tem certeza de que deseja excluir Profissional {{ id }}?"
+    },
+    "detail": {
+      "title": "Profissional"
+    },
+    "id": "ID",
+    "name": "Nome",
+    "phone": "Telefone",
+    "email": "Email",
+    "activated": "Ativado",
+    "professionalType": "Tipo de Profissional"
   }
 }

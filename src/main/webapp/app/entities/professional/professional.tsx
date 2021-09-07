@@ -73,16 +73,16 @@ export const Professional = (props: IProfessionalProps) => {
   return (
     <div>
       <h2 id="professional-heading" data-cy="ProfessionalHeading">
-        <Translate contentKey="crudApp.professional.home.title">Professionals</Translate>
+        <Translate contentKey="Professional.home.title">Professionals</Translate>
         <div className="d-flex justify-content-end">
           <Button className="mr-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
-            <Translate contentKey="crudApp.professional.home.refreshListLabel">Refresh List</Translate>
+            <Translate contentKey="Professional.home.refreshListLabel">Refresh List</Translate>
           </Button>
           <Link to={`${match.url}/new`} className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp;
-            <Translate contentKey="crudApp.professional.home.createLabel">Create new Professional</Translate>
+            <Translate contentKey="Professional.home.createLabel">Create new Professional</Translate>
           </Link>
         </div>
       </h2>
@@ -92,16 +92,19 @@ export const Professional = (props: IProfessionalProps) => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('name')}>
-                  <Translate contentKey="crudApp.professional.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="Professional.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('phone')}>
-                  <Translate contentKey="crudApp.professional.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="Professional.phone">Phone</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('email')}>
-                  <Translate contentKey="crudApp.professional.email">Email</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="Professional.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('activated')}>
-                  <Translate contentKey="crudApp.professional.activated">Activated</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="Professional.activated">Activated</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="Professional.professionalType">Professional Type</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -113,6 +116,7 @@ export const Professional = (props: IProfessionalProps) => {
                   <td>{professional.phone}</td>
                   <td>{professional.email}</td>
                   <td>{professional.activated ? 'true' : 'false'}</td>
+                  <td>{professional.professionalType ? professional.professionalType.description : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${professional.id}`} color="info" size="sm" data-cy="entityDetailsButton">
@@ -154,7 +158,7 @@ export const Professional = (props: IProfessionalProps) => {
         ) : (
           !loading && (
             <div className="alert alert-warning">
-              <Translate contentKey="crudApp.professional.home.notFound">No Professionals found</Translate>
+              <Translate contentKey="Professional.home.notFound">No Professionals found</Translate>
             </div>
           )
         )}

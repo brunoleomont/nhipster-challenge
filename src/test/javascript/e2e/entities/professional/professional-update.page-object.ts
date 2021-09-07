@@ -4,13 +4,14 @@ import { waitUntilDisplayed, waitUntilHidden, isVisible } from '../../util/utils
 const expect = chai.expect;
 
 export default class ProfessionalUpdatePage {
-  pageTitle: ElementFinder = element(by.id('crudApp.professional.home.createOrEditLabel'));
+  pageTitle: ElementFinder = element(by.id('Professional.home.createOrEditLabel'));
   saveButton: ElementFinder = element(by.id('save-entity'));
   cancelButton: ElementFinder = element(by.id('cancel-save'));
   nameInput: ElementFinder = element(by.css('input#professional-name'));
   phoneInput: ElementFinder = element(by.css('input#professional-phone'));
   emailInput: ElementFinder = element(by.css('input#professional-email'));
   activatedInput: ElementFinder = element(by.css('input#professional-activated'));
+  professionalTypeSelect: ElementFinder = element(by.css('select#professional-professionalType'));
 
   getPageTitle() {
     return this.pageTitle;
@@ -43,6 +44,22 @@ export default class ProfessionalUpdatePage {
   getActivatedInput() {
     return this.activatedInput;
   }
+  async professionalTypeSelectLastOption() {
+    await this.professionalTypeSelect.all(by.tagName('option')).last().click();
+  }
+
+  async professionalTypeSelectOption(option) {
+    await this.professionalTypeSelect.sendKeys(option);
+  }
+
+  getProfessionalTypeSelect() {
+    return this.professionalTypeSelect;
+  }
+
+  async getProfessionalTypeSelectedOption() {
+    return this.professionalTypeSelect.element(by.css('option:checked')).getText();
+  }
+
   async save() {
     await this.saveButton.click();
   }
@@ -74,6 +91,7 @@ export default class ProfessionalUpdatePage {
       await this.getActivatedInput().click();
       expect(await this.getActivatedInput().isSelected()).to.be.true;
     }
+    await this.professionalTypeSelectLastOption();
     await this.save();
     await waitUntilHidden(this.saveButton);
     expect(await isVisible(this.saveButton)).to.be.false;

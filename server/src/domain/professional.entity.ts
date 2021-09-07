@@ -2,6 +2,8 @@
 import { Entity, Column, JoinColumn, OneToOne, ManyToOne, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { BaseEntity } from './base/base.entity';
 
+import { ProfessionalType } from './professional-type.entity';
+
 /**
  * A Professional.
  */
@@ -18,6 +20,9 @@ export class Professional extends BaseEntity {
 
     @Column({ type: 'boolean', name: 'activated' })
     activated: boolean;
+
+    @ManyToOne((type) => ProfessionalType)
+    professionalType: ProfessionalType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
 }

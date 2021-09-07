@@ -21,7 +21,7 @@ export const ProfessionalDetail = (props: IProfessionalDetailProps) => {
     <Row>
       <Col md="8">
         <h2 data-cy="professionalDetailsHeading">
-          <Translate contentKey="crudApp.professional.detail.title">Professional</Translate>
+          <Translate contentKey="Professional.detail.title">Professional</Translate>
         </h2>
         <dl className="jh-entity-details">
           <dt>
@@ -32,28 +32,32 @@ export const ProfessionalDetail = (props: IProfessionalDetailProps) => {
           <dd>{professionalEntity.id}</dd>
           <dt>
             <span id="name">
-              <Translate contentKey="crudApp.professional.name">Name</Translate>
+              <Translate contentKey="Professional.name">Name</Translate>
             </span>
           </dt>
           <dd>{professionalEntity.name}</dd>
           <dt>
             <span id="phone">
-              <Translate contentKey="crudApp.professional.phone">Phone</Translate>
+              <Translate contentKey="Professional.phone">Phone</Translate>
             </span>
           </dt>
           <dd>{professionalEntity.phone}</dd>
           <dt>
             <span id="email">
-              <Translate contentKey="crudApp.professional.email">Email</Translate>
+              <Translate contentKey="Professional.email">Email</Translate>
             </span>
           </dt>
           <dd>{professionalEntity.email}</dd>
           <dt>
             <span id="activated">
-              <Translate contentKey="crudApp.professional.activated">Activated</Translate>
+              <Translate contentKey="Professional.activated">Activated</Translate>
             </span>
           </dt>
           <dd>{professionalEntity.activated ? 'true' : 'false'}</dd>
+          <dt>
+            <Translate contentKey="Professional.professionalType">Professional Type</Translate>
+          </dt>
+          <dd>{professionalEntity.professionalType ? professionalEntity.professionalType.description : ''}</dd>
         </dl>
         <Button tag={Link} to="/professional" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

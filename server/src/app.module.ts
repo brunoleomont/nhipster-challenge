@@ -19,6 +19,7 @@ import { ProfessionalModule } from './module/professional.module';
         AuthModule,
         ProfessionalTypeModule,
         ProfessionalModule,
+        ProfessionalModule,
         // jhipster-needle-add-entity-module-to-main - JHipster will add entity modules here, do not remove
     ],
     controllers: [

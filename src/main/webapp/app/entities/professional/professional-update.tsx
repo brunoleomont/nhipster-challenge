@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getEntities as getProfessionalTypes } from 'app/entities/professional-type/professional-type.reducer';
+import { IRootState } from 'app/shared/reducers';
+import { AvFeedback, AvField, AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
+import React, { useEffect, useState } from 'react';
+import { Translate, translate } from 'react-jhipster';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
-import { Translate, translate } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IRootState } from 'app/shared/reducers';
-
-import { getEntity, updateEntity, createEntity, reset } from './professional.reducer';
-import { IProfessional } from 'app/shared/model/professional.model';
-import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
-import { mapIdList } from 'app/shared/util/entity-utils';
+import { Button, Col, Label, Row } from 'reactstrap';
+import { createEntity, getEntity, reset, updateEntity } from './professional.reducer';
 
 export interface IProfessionalUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
   const [isNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { professionalEntity, loading, updating } = props;
+  const { professionalEntity, professionalTypes, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/professional' + props.location.search);
@@ -29,6 +26,8 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
     } else {
       props.getEntity(props.match.params.id);
     }
+
+    props.getProfessionalTypes();
   }, []);
 
   useEffect(() => {
@@ -42,6 +41,7 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
       const entity = {
         ...professionalEntity,
         ...values,
+        professionalType: professionalTypes.find(it => it.id.toString() === values.professionalType.id.toString()),
       };
 
       if (isNew) {
@@ -56,8 +56,8 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="crudApp.professional.home.createOrEditLabel" data-cy="ProfessionalCreateUpdateHeading">
-            <Translate contentKey="crudApp.professional.home.createOrEditLabel">Create or edit a Professional</Translate>
+          <h2 id="Professional.home.createOrEditLabel" data-cy="ProfessionalCreateUpdateHeading">
+            <Translate contentKey="Professional.home.createOrEditLabel">Create or edit a Professional</Translate>
           </h2>
         </Col>
       </Row>
@@ -69,7 +69,7 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
             <AvForm model={isNew ? {} : professionalEntity} onSubmit={saveEntity}>
               <AvGroup>
                 <Label id="nameLabel" for="professional-name">
-                  <Translate contentKey="crudApp.professional.name">Name</Translate>
+                  <Translate contentKey="Professional.name">Name</Translate>
                 </Label>
                 <AvField
                   id="professional-name"
@@ -83,21 +83,45 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
               </AvGroup>
               <AvGroup>
                 <Label id="phoneLabel" for="professional-phone">
-                  <Translate contentKey="crudApp.professional.phone">Phone</Translate>
+                  <Translate contentKey="Professional.phone">Phone</Translate>
                 </Label>
                 <AvField id="professional-phone" data-cy="phone" type="text" name="phone" />
               </AvGroup>
               <AvGroup>
                 <Label id="emailLabel" for="professional-email">
-                  <Translate contentKey="crudApp.professional.email">Email</Translate>
+                  <Translate contentKey="Professional.email">Email</Translate>
                 </Label>
                 <AvField id="professional-email" data-cy="email" type="text" name="email" />
               </AvGroup>
               <AvGroup check>
                 <Label id="activatedLabel">
                   <AvInput id="professional-activated" data-cy="activated" type="checkbox" className="form-check-input" name="activated" />
-                  <Translate contentKey="crudApp.professional.activated">Activated</Translate>
+                  <Translate contentKey="Professional.activated">Activated</Translate>
                 </Label>
+              </AvGroup>
+              <AvGroup>
+                <Label for="professional-professionalType">
+                  <Translate contentKey="Professional.professionalType">Professional Type</Translate>
+                </Label>
+                <AvField
+                  id="professional-professionalType"
+                  data-cy="professionalType"
+                  type="select"
+                  className="form-control"
+                  name="professionalType.id"
+                  required
+                >
+                  {professionalTypes
+                    ? professionalTypes.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.description}
+                        </option>
+                      ))
+                    : null}
+                </AvField>
+                <AvFeedback>
+                  <Translate contentKey="entity.validation.required">This field is required.</Translate>
+                </AvFeedback>
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/professional" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
@@ -121,6 +145,7 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
+  professionalTypes: storeState.professionalType.entities,
   professionalEntity: storeState.professional.entity,
   loading: storeState.professional.loading,
   updating: storeState.professional.updating,
@@ -128,6 +153,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getProfessionalTypes,
   getEntity,
   updateEntity,
   createEntity,

@@ -9,7 +9,7 @@ import ProfessionalUpdatePage from './professional-update.page-object';
 const expect = chai.expect;
 export class ProfessionalDeleteDialog {
   deleteModal = element(by.className('modal'));
-  private dialogTitle: ElementFinder = element(by.id('crudApp.professional.delete.question'));
+  private dialogTitle: ElementFinder = element(by.id('Professional.delete.question'));
   private confirmButton = element(by.id('jhi-confirm-delete-professional'));
 
   getDialogTitle() {
@@ -59,7 +59,7 @@ export default class ProfessionalComponentsPage {
 
     const professionalDeleteDialog = new ProfessionalDeleteDialog();
     await waitUntilDisplayed(professionalDeleteDialog.deleteModal);
-    expect(await professionalDeleteDialog.getDialogTitle().getAttribute('id')).to.match(/crudApp.professional.delete.question/);
+    expect(await professionalDeleteDialog.getDialogTitle().getAttribute('id')).to.match(/Professional.delete.question/);
     await professionalDeleteDialog.clickOnConfirmButton();
 
     await waitUntilHidden(professionalDeleteDialog.deleteModal);

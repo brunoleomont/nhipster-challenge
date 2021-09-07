@@ -50,7 +50,7 @@
     "buildTool": "maven",
     "enableHibernateCache": true,
     "reactive": false,
-    "lastLiquibaseTimestamp": 1630951268000,
-    "entities": ["ProfessionalType"]
+    "lastLiquibaseTimestamp": 1631022716000,
+    "entities": ["ProfessionalType", "Professional"]
   }
 }

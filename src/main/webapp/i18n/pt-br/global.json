@@ -7,7 +7,8 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "professionalType": "Professional Type",
+        "professionalType": "Tipo de Profissional",
+        "professional": "Profissional",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -131,7 +132,7 @@
     "emailexists": "E-mail já está cadastrado!",
     "idexists": "Novo(a) {{entityName}} não pode ter um identificador",
     "idnull": "Identificador inválido",
-    "idinvalid": "Identificador invalido",
+    "idinvalid": "Identificador inválido",
     "idnotfound": "Identificador não encontrado",
     "file": {
       "could.not.extract": "Não foi possível extrair o arquivo",

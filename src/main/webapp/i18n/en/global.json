@@ -8,6 +8,7 @@
       "entities": {
         "main": "Entities",
         "professionalType": "Professional Type",
+        "professional": "Professional",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,27 @@
+{
+  "crudApp": {
+    "professional": {
+      "home": {
+        "title": "Professionals",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "New",
+        "createOrEditLabel": "Create or edit a Professional",
+        "notFound": "No Professionals found"
+      },
+      "created": "A new Professional is created with identifier {{ param }}",
+      "updated": "A Professional is updated with identifier {{ param }}",
+      "deleted": "A Professional is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Professional {{ id }}?"
+      },
+      "detail": {
+        "title": "Professional"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "activated": "Activated"
+    }
+  }
+}

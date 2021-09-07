@@ -16,6 +16,10 @@ import passwordReset, { PasswordResetState } from 'app/modules/account/password-
 import professionalType, {
   ProfessionalTypeState
 } from 'app/entities/professional-type/professional-type.reducer';
+// prettier-ignore
+import professional, {
+  ProfessionalState
+} from 'app/entities/professional/professional.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -30,6 +34,7 @@ export interface IRootState {
   readonly password: PasswordState;
   readonly settings: SettingsState;
   readonly professionalType: ProfessionalTypeState;
+  readonly professional: ProfessionalState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -46,6 +51,7 @@ const rootReducer = combineReducers<IRootState>({
   password,
   settings,
   professionalType,
+  professional,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

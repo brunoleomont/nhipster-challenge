@@ -15,7 +15,7 @@ export const Home = (props: IHomeProp) => {
     <Row>
       <Col md="12">
         <h2>
-          <Translate contentKey="home.title">Welcome, Java Hipster!</Translate>
+          <Translate contentKey="home.title">Welcome!</Translate>
         </h2>
         {account && account.login ? (
           <div>

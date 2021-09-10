@@ -31,7 +31,7 @@ export class ProfessionalTypeService {
         const resultList = await this.professionalTypeRepository.findAndCount(options);
         const professionalTypeDTO: ProfessionalTypeDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((professionalType) =>
+            resultList[0].forEach(professionalType =>
                 professionalTypeDTO.push(ProfessionalTypeMapper.fromEntityToDTO(professionalType)),
             );
             resultList[0] = professionalTypeDTO;
@@ -41,14 +41,14 @@ export class ProfessionalTypeService {
 
     async save(professionalTypeDTO: ProfessionalTypeDTO): Promise<ProfessionalTypeDTO | undefined> {
         const entity = ProfessionalTypeMapper.fromDTOtoEntity(professionalTypeDTO);
-        entity.createdDate = new Date;
+        entity.createdDate = new Date();
         const result = await this.professionalTypeRepository.save(entity);
         return ProfessionalTypeMapper.fromEntityToDTO(result);
     }
 
     async update(professionalTypeDTO: ProfessionalTypeDTO): Promise<ProfessionalTypeDTO | undefined> {
         const entity = ProfessionalTypeMapper.fromDTOtoEntity(professionalTypeDTO);
-        entity.lastModifiedDate = new Date;
+        entity.lastModifiedDate = new Date();
         const result = await this.professionalTypeRepository.save(entity);
         return ProfessionalTypeMapper.fromEntityToDTO(result);
     }

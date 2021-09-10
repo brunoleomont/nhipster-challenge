@@ -9,9 +9,9 @@ export class ProfessionalMapper {
         if (!entityDTO) {
             return;
         }
-        let entity = new Professional();
+        const entity = new Professional();
         const fields = Object.getOwnPropertyNames(entityDTO);
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entity[field] = entityDTO[field];
         });
         return entity;
@@ -21,11 +21,11 @@ export class ProfessionalMapper {
         if (!entity) {
             return;
         }
-        let entityDTO = new ProfessionalDTO();
+        const entityDTO = new ProfessionalDTO();
 
         const fields = Object.getOwnPropertyNames(entity);
 
-        fields.forEach((field) => {
+        fields.forEach(field => {
             entityDTO[field] = entity[field];
         });
 

@@ -41,56 +41,52 @@ describe('ProfessionalType Controller', () => {
     });
 
     it('/GET all professional-types ', async () => {
-        const getEntities: ProfessionalTypeDTO[] = (
-            await request(app.getHttpServer()).get('/api/professional-types').expect(200)
-        ).body;
+        const getEntities: ProfessionalTypeDTO[] = (await request(app.getHttpServer())
+            .get('/api/professional-types')
+            .expect(200)).body;
 
         expect(getEntities).toEqual(entityMock);
     });
 
     it('/GET professional-types by id', async () => {
-        const getEntity: ProfessionalTypeDTO = (
-            await request(app.getHttpServer())
-                .get('/api/professional-types/' + entityMock.id)
-                .expect(200)
-        ).body;
+        const getEntity: ProfessionalTypeDTO = (await request(app.getHttpServer())
+            .get('/api/professional-types/' + entityMock.id)
+            .expect(200)).body;
 
         expect(getEntity).toEqual(entityMock);
     });
 
     it('/POST create professional-types', async () => {
-        const createdEntity: ProfessionalTypeDTO = (
-            await request(app.getHttpServer()).post('/api/professional-types').send(entityMock).expect(201)
-        ).body;
+        const createdEntity: ProfessionalTypeDTO = (await request(app.getHttpServer())
+            .post('/api/professional-types')
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(createdEntity).toEqual(entityMock);
     });
 
     it('/PUT update professional-types', async () => {
-        const updatedEntity: ProfessionalTypeDTO = (
-            await request(app.getHttpServer()).put('/api/professional-types').send(entityMock).expect(201)
-        ).body;
+        const updatedEntity: ProfessionalTypeDTO = (await request(app.getHttpServer())
+            .put('/api/professional-types')
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(updatedEntity).toEqual(entityMock);
     });
 
     it('/PUT update professional-types from id', async () => {
-        const updatedEntity: ProfessionalTypeDTO = (
-            await request(app.getHttpServer())
-                .put('/api/professional-types/' + entityMock.id)
-                .send(entityMock)
-                .expect(201)
-        ).body;
+        const updatedEntity: ProfessionalTypeDTO = (await request(app.getHttpServer())
+            .put('/api/professional-types/' + entityMock.id)
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(updatedEntity).toEqual(entityMock);
     });
 
     it('/DELETE professional-types', async () => {
-        const deletedEntity: ProfessionalTypeDTO = (
-            await request(app.getHttpServer())
-                .delete('/api/professional-types/' + entityMock.id)
-                .expect(204)
-        ).body;
+        const deletedEntity: ProfessionalTypeDTO = (await request(app.getHttpServer())
+            .delete('/api/professional-types/' + entityMock.id)
+            .expect(204)).body;
 
         expect(deletedEntity).toEqual({});
     });

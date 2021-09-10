@@ -41,56 +41,52 @@ describe('Professional Controller', () => {
     });
 
     it('/GET all professionals ', async () => {
-        const getEntities: ProfessionalDTO[] = (
-            await request(app.getHttpServer()).get('/api/professionals').expect(200)
-        ).body;
+        const getEntities: ProfessionalDTO[] = (await request(app.getHttpServer())
+            .get('/api/professionals')
+            .expect(200)).body;
 
         expect(getEntities).toEqual(entityMock);
     });
 
     it('/GET professionals by id', async () => {
-        const getEntity: ProfessionalDTO = (
-            await request(app.getHttpServer())
-                .get('/api/professionals/' + entityMock.id)
-                .expect(200)
-        ).body;
+        const getEntity: ProfessionalDTO = (await request(app.getHttpServer())
+            .get('/api/professionals/' + entityMock.id)
+            .expect(200)).body;
 
         expect(getEntity).toEqual(entityMock);
     });
 
     it('/POST create professionals', async () => {
-        const createdEntity: ProfessionalDTO = (
-            await request(app.getHttpServer()).post('/api/professionals').send(entityMock).expect(201)
-        ).body;
+        const createdEntity: ProfessionalDTO = (await request(app.getHttpServer())
+            .post('/api/professionals')
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(createdEntity).toEqual(entityMock);
     });
 
     it('/PUT update professionals', async () => {
-        const updatedEntity: ProfessionalDTO = (
-            await request(app.getHttpServer()).put('/api/professionals').send(entityMock).expect(201)
-        ).body;
+        const updatedEntity: ProfessionalDTO = (await request(app.getHttpServer())
+            .put('/api/professionals')
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(updatedEntity).toEqual(entityMock);
     });
 
     it('/PUT update professionals from id', async () => {
-        const updatedEntity: ProfessionalDTO = (
-            await request(app.getHttpServer())
-                .put('/api/professionals/' + entityMock.id)
-                .send(entityMock)
-                .expect(201)
-        ).body;
+        const updatedEntity: ProfessionalDTO = (await request(app.getHttpServer())
+            .put('/api/professionals/' + entityMock.id)
+            .send(entityMock)
+            .expect(201)).body;
 
         expect(updatedEntity).toEqual(entityMock);
     });
 
     it('/DELETE professionals', async () => {
-        const deletedEntity: ProfessionalDTO = (
-            await request(app.getHttpServer())
-                .delete('/api/professionals/' + entityMock.id)
-                .expect(204)
-        ).body;
+        const deletedEntity: ProfessionalDTO = (await request(app.getHttpServer())
+            .delete('/api/professionals/' + entityMock.id)
+            .expect(204)).body;
 
         expect(deletedEntity).toEqual({});
     });

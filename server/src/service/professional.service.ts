@@ -30,7 +30,7 @@ export class ProfessionalService {
         const resultList = await this.professionalRepository.findAndCount(options);
         const professionalDTO: ProfessionalDTO[] = [];
         if (resultList && resultList[0]) {
-            resultList[0].forEach((professional) =>
+            resultList[0].forEach(professional =>
                 professionalDTO.push(ProfessionalMapper.fromEntityToDTO(professional)),
             );
             resultList[0] = professionalDTO;
@@ -40,14 +40,14 @@ export class ProfessionalService {
 
     async save(professionalDTO: ProfessionalDTO): Promise<ProfessionalDTO | undefined> {
         const entity = ProfessionalMapper.fromDTOtoEntity(professionalDTO);
-        entity.createdDate = new Date;
+        entity.createdDate = new Date();
         const result = await this.professionalRepository.save(entity);
         return ProfessionalMapper.fromEntityToDTO(result);
     }
 
     async update(professionalDTO: ProfessionalDTO): Promise<ProfessionalDTO | undefined> {
         const entity = ProfessionalMapper.fromDTOtoEntity(professionalDTO);
-        entity.lastModifiedDate = new Date;
+        entity.lastModifiedDate = new Date();
         const result = await this.professionalRepository.save(entity);
         return ProfessionalMapper.fromEntityToDTO(result);
     }

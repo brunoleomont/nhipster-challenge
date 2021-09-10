@@ -21,7 +21,7 @@ export class Professional extends BaseEntity {
     @Column({ type: 'boolean', name: 'activated' })
     activated: boolean;
 
-    @ManyToOne((type) => ProfessionalType)
+    @ManyToOne(type => ProfessionalType)
     professionalType: ProfessionalType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

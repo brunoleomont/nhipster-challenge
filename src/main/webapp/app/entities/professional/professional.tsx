@@ -1,17 +1,14 @@
 // removed th id primary key
-import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IRootState } from 'app/shared/reducers';
+import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
+import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
+import React, { useEffect, useState } from 'react';
+import { getSortState, JhiItemCount, JhiPagination, Translate } from 'react-jhipster';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Col, Row, Table } from 'reactstrap';
-import { Translate, getSortState, IPaginationBaseState, JhiPagination, JhiItemCount } from 'react-jhipster';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { IRootState } from 'app/shared/reducers';
+import { Button, Row, Table } from 'reactstrap';
 import { getEntities } from './professional.reducer';
-import { IProfessional } from 'app/shared/model/professional.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
-import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
-import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
 
 export interface IProfessionalProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
@@ -106,6 +103,12 @@ export const Professional = (props: IProfessionalProps) => {
                 <th>
                   <Translate contentKey="Professional.professionalType">Professional Type</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th>
+                  <Translate contentKey="Professional.createdDate">createdDate</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="Professional.lastModifiedDate">lastModifiedDate</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -117,6 +120,8 @@ export const Professional = (props: IProfessionalProps) => {
                   <td>{professional.email}</td>
                   <td>{professional.activated ? 'true' : 'false'}</td>
                   <td>{professional.professionalType ? professional.professionalType.description : ''}</td>
+                  <td>{professional.createdDate}</td>
+                  <td>{professional.lastModifiedDate}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${professional.id}`} color="info" size="sm" data-cy="entityDetailsButton">

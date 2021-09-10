@@ -94,6 +94,12 @@ export const ProfessionalType = (props: IProfessionalTypeProps) => {
                 <th className="hand" onClick={sort('activated')}>
                   <Translate contentKey="ProfessionalType.activated">Activated</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th>
+                  <Translate contentKey="ProfessionalType.createdDate">createdDate</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="ProfessionalType.lastModifiedDate">lastModifiedDate</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th />
               </tr>
             </thead>
@@ -102,6 +108,8 @@ export const ProfessionalType = (props: IProfessionalTypeProps) => {
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{professionalType.description}</td>
                   <td>{professionalType.activated ? 'true' : 'false'}</td>
+                  <td>{professionalType.createdDate}</td>
+                  <td>{professionalType.lastModifiedDate}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${professionalType.id}`} color="info" size="sm" data-cy="entityDetailsButton">

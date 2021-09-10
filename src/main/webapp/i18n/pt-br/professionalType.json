@@ -18,6 +18,8 @@
     },
     "id": "ID",
     "description": "Descrição",
-    "activated": "Ativado"
+    "activated": "Ativado",
+    "createdDate": "Data de criação",
+    "lastModifiedDate": "Última modificação"
   }
 }

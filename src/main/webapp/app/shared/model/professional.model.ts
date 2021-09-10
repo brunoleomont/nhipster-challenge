@@ -7,6 +7,8 @@ export interface IProfessional {
   email?: string | null;
   activated?: boolean;
   professionalType?: IProfessionalType;
+  createdDate?: Date;
+  lastModifiedDate?: Date;
 }
 
 export const defaultValue: Readonly<IProfessional> = {

@@ -41,12 +41,14 @@ export class ProfessionalTypeService {
 
     async save(professionalTypeDTO: ProfessionalTypeDTO): Promise<ProfessionalTypeDTO | undefined> {
         const entity = ProfessionalTypeMapper.fromDTOtoEntity(professionalTypeDTO);
+        entity.createdDate = new Date;
         const result = await this.professionalTypeRepository.save(entity);
         return ProfessionalTypeMapper.fromEntityToDTO(result);
     }
 
     async update(professionalTypeDTO: ProfessionalTypeDTO): Promise<ProfessionalTypeDTO | undefined> {
         const entity = ProfessionalTypeMapper.fromDTOtoEntity(professionalTypeDTO);
+        entity.lastModifiedDate = new Date;
         const result = await this.professionalTypeRepository.save(entity);
         return ProfessionalTypeMapper.fromEntityToDTO(result);
     }

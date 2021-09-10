@@ -21,6 +21,8 @@
     "phone": "Phone",
     "email": "Email",
     "activated": "Activated",
-    "professionalType": "Professional Type"
+    "professionalType": "Professional Type",
+    "createdDate": "Created date",
+    "lastModifiedDate": "Last modified"
   }
 }

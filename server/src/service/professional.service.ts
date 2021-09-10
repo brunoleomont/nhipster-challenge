@@ -40,12 +40,14 @@ export class ProfessionalService {
 
     async save(professionalDTO: ProfessionalDTO): Promise<ProfessionalDTO | undefined> {
         const entity = ProfessionalMapper.fromDTOtoEntity(professionalDTO);
+        entity.createdDate = new Date;
         const result = await this.professionalRepository.save(entity);
         return ProfessionalMapper.fromEntityToDTO(result);
     }
 
     async update(professionalDTO: ProfessionalDTO): Promise<ProfessionalDTO | undefined> {
         const entity = ProfessionalMapper.fromDTOtoEntity(professionalDTO);
+        entity.lastModifiedDate = new Date;
         const result = await this.professionalRepository.save(entity);
         return ProfessionalMapper.fromEntityToDTO(result);
     }

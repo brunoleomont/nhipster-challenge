@@ -85,13 +85,13 @@ export const ProfessionalUpdate = (props: IProfessionalUpdateProps) => {
                 <Label id="phoneLabel" for="professional-phone">
                   <Translate contentKey="Professional.phone">Phone</Translate>
                 </Label>
-                <AvField id="professional-phone" data-cy="phone" type="text" name="phone" />
+                <AvField id="professional-phone" data-cy="phone" type="text" name="phone" validate={{ tel: true }} />
               </AvGroup>
               <AvGroup>
                 <Label id="emailLabel" for="professional-email">
                   <Translate contentKey="Professional.email">Email</Translate>
                 </Label>
-                <AvField id="professional-email" data-cy="email" type="text" name="email" />
+                <AvField id="professional-email" data-cy="email" type="text" name="email" validate={{ email: true }} />
               </AvGroup>
               <AvGroup check>
                 <Label id="activatedLabel">

@@ -13,6 +13,8 @@
     "delete": {
       "question": "Are you sure you want to delete Professional {{ id }}?"
     },
+    "active": "Active",
+    "disabled": "Disabled",
     "detail": {
       "title": "Professional"
     },

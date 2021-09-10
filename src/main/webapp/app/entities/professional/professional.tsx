@@ -118,7 +118,17 @@ export const Professional = (props: IProfessionalProps) => {
                   <td>{professional.name}</td>
                   <td>{professional.phone}</td>
                   <td>{professional.email}</td>
-                  <td>{professional.activated ? 'true' : 'false'}</td>
+                  <td>
+                    {professional.activated ? (
+                      <span className="text-success">
+                        <Translate contentKey="ProfessionalType.active">Active</Translate>
+                      </span>
+                    ) : (
+                      <span className="text-danger">
+                        <Translate contentKey="ProfessionalType.disabled">Disable</Translate>
+                      </span>
+                    )}
+                  </td>
                   <td>{professional.professionalType ? professional.professionalType.description : ''}</td>
                   <td>{professional.createdDate}</td>
                   <td>{professional.lastModifiedDate}</td>

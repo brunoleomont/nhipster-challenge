@@ -13,6 +13,8 @@
     "delete": {
       "question": "Tem certeza de que deseja excluir Profissional {{ id }}?"
     },
+    "active": "Ativo",
+    "disabled": "Desativado",
     "detail": {
       "title": "Profissional"
     },

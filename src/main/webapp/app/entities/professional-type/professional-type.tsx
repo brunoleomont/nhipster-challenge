@@ -107,7 +107,17 @@ export const ProfessionalType = (props: IProfessionalTypeProps) => {
               {professionalTypeList.map((professionalType, i) => (
                 <tr key={`entity-${i}`} data-cy="entityTable">
                   <td>{professionalType.description}</td>
-                  <td>{professionalType.activated ? 'true' : 'false'}</td>
+                  <td>
+                    {professionalType.activated ? (
+                      <span className="text-success">
+                        <Translate contentKey="ProfessionalType.active">Active</Translate>
+                      </span>
+                    ) : (
+                      <span className="text-danger">
+                        <Translate contentKey="ProfessionalType.disabled">Disable</Translate>
+                      </span>
+                    )}
+                  </td>
                   <td>{professionalType.createdDate}</td>
                   <td>{professionalType.lastModifiedDate}</td>
                   <td className="text-right">

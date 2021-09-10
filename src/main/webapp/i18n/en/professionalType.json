@@ -3,7 +3,7 @@
     "home": {
       "title": "Professional Types",
       "refreshListLabel": "Refresh list",
-      "createLabel": "Create a new Professional Type",
+      "createLabel": "New",
       "createOrEditLabel": "Create or edit a Professional Type",
       "notFound": "No Professional Types found"
     },

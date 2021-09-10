@@ -3,6 +3,5 @@ services:
   crudapp-app:
     build: ../../..
     container_name: crudapp-app
-    environment:
     ports:
       - 8081:8081

@@ -5,8 +5,8 @@ services:
     # volumes:
     #     - ~/volumes/jhipster/crudApp/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=sa
-      - POSTGRES_PASSWORD=yourStrong(!)Password
+      - POSTGRES_USER=crudapp
+      - POSTGRES_PASSWORD=crudapp123
       - POSTGRES_DB=crudapp
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
